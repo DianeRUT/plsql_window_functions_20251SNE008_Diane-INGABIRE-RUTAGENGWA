@@ -70,16 +70,97 @@ This query retrieves bookings that have valid customer and room records.
 **Business Interpretation:**  
 The result shows only confirmed bookings linked to existing customers and rooms, helping management analyze valid revenue-generating transactions.
 
+### 4.2 LEFT JOIN
+
+This query identifies customers who have never made any booking.
+
+![LEFT JOIN Result](screenshots/left_join.png)
+
+**Business Interpretation:**  
+Customers without bookings may represent inactive or newly registered users. The hotel can target these customers with marketing campaigns or special offers.
+
+### 4.3 RIGHT JOIN
+
+This query identifies rooms that have never been booked.
+
+![RIGHT JOIN Result](screenshots/right_join.png)
+
+**Business Interpretation:**  
+Rooms without bookings may indicate low demand or pricing issues. Management can consider promotions or pricing adjustments for these rooms.
+
+### 4.4 FULL OUTER JOIN
+
+This query retrieves all customers and bookings, including records that do not have matching entries.
+
+![FULL OUTER JOIN Result](screenshots/full_outer_join.png)
+
+**Business Interpretation:**  
+This provides a complete overview of booking activity and customer engagement, highlighting unmatched records that require attention.
+
+### 4.5 SELF JOIN
+
+This query compares bookings made on the same booking date by different customers.
+
+![SELF JOIN Result](screenshots/self_join.png)
+
+**Business Interpretation:**  
+Multiple bookings on the same date may indicate peak demand periods. This insight helps management plan staffing and optimize pricing strategies.
+
 ## 5. Part B: SQL Window Functions Implementation
 ### 5.1 Ranking Functions
 
+This query ranks room types based on total revenue generated.
+
+![Ranking Functions Result](screenshots/ranking_functions.png)
+
+**Interpretation:**  
+Higher-ranked room types generate more revenue and should be prioritized in pricing and marketing strategies.
+
+### 5.2 Aggregate Window Functions
+
+This query calculates a running total of booking revenue over time.
+
+![Aggregate Window Result](screenshots/aggregate_window.png)
+
+**Interpretation:**  
+The running total shows cumulative revenue growth and helps management track financial performance over time.
+
+### 5.3 Navigation Functions
+
+This query compares each booking’s revenue with the previous one.
+
+![Navigation Functions Result](screenshots/navigation_functions.png)
+
+**Interpretation:**  
+Revenue changes between periods highlight growth or decline trends, supporting pricing and promotion decisions.
+
+### 5.4 Distribution Functions
+
+This query segments customers into quartiles based on total booking value.
+
+![Distribution Functions Result](screenshots/distribution_functions.png)
+
+**Interpretation:**  
+Customer segmentation helps identify high-value customers and design targeted loyalty programs.
+
+
 ## 6. Results Analysis
+
 ### Descriptive Analysis
+The analysis shows booking trends, revenue performance by room type, and customer spending behavior.
 
 ### Diagnostic Analysis
+Revenue differences are driven by room pricing, booking frequency, and customer preferences.
+
 ### Prescriptive Analysis
+The hotel should focus on promoting high-revenue room types, offer incentives to low-activity customers, and optimize pricing during peak demand periods.
+
 
 ## 7. References
+
+- PostgreSQL Official Documentation
+- SQL Window Functions Documentation
+- Database Design Tutorials(youtube)
 
 ## 8. Integrity Statement
 All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation.
